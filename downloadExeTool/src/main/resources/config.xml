@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SWCJ>
+    <config>
+        <timeout>10000</timeout>
+        <userAgent>
+            <value>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.62</value>
+        </userAgent>
+        <executes>
+            <execute>
+                <key>jsoup</key>
+                <value>com.midream.sheep.swcj.core.executetool.execute.jsoup.SWCJJsoup</value>
+            </execute>
+            <execute>
+                <executeConfig>com.midream.sheep.swcj.core.executetool.execute.httpforswcj.tool.HttpForSwcjConfigures</executeConfig>>
+            </execute>
+        </executes>
+        <chooseStrategy>METHOD_NAME</chooseStrategy>
+        <injections>
+            <injection>
+                <key>
+                    <configModel/>
+                </key>
+                <value>
+                    <id>downloader</id>
+                    <cookies>
+                    </cookies>
+                    <parentInterface>live.midreamsheep.tools.download.downloaders.Downloader</parentInterface>
+                </value>
+            </injection>
+        <injection>
+            <key>
+                <methodName/>
+            </key>
+            <value>
+                getDownloadJson
+            </value>
+        </injection>
+        </injections>
+    </config>
+</SWCJ>

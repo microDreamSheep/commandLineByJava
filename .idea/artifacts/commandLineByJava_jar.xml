@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="commandLineByJava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/commandLineByJava_jar</output-path>
+    <root id="archive" name="commandLineByJava.jar">
+      <element id="module-output" name="commandLineByJava" />
+      <element id="module-output" name="downloadExeTool" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../environment/java/maven/repository/swcj/swcj-efficient-compiler/1.0/swcj-efficient-compiler-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../environment/java/maven/repository/swcj/swcj-http-tool/1.0/swcj-http-tool-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../environment/java/maven/repository/swcj/swcj-core/1.0/swcj-core-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../environment/java/maven/repository/swcj/swcj-jsoup/1.0/swcj-jsoup-1.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

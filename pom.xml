@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>live.midreamsheep.command</groupId>
+    <artifactId>commandLineByJava</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>downloadExeTool</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <!--依赖导入-->
+    <dependencies>
+        <dependency>
+            <!--SWCJ核心依赖-->
+            <groupId>swcj</groupId>
+            <artifactId>swcj-core</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--swcj jsoup依赖-->
+        <dependency>
+            <groupId>swcj</groupId>
+            <artifactId>swcj-jsoup</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--编译增强依赖-->
+        <dependency>
+            <groupId>swcj</groupId>
+            <artifactId>swcj-efficient-compiler</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--http功能依赖-->
+        <dependency>
+            <groupId>swcj</groupId>
+            <artifactId>swcj-http-tool</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--单元测试依赖 junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>live.midreamsheep.command</groupId>
+            <artifactId>downloadExeTool</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
