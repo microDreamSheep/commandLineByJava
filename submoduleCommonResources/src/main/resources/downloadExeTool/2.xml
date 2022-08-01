@@ -12,10 +12,10 @@
                 <type>reg</type>
                 <xml>
                     <reg>
-                        <reg name="name">
+                        <reg name="name" del="'&quot;softname&quot;:&quot;';'&quot;';">
                             "softname":".+?"
                         </reg>
-                        <reg name="url">
+                        <reg name="url" del="'&quot;soft_download&quot;:&quot;';'&quot;';">
                             "soft_download":"(.)+?"
                         </reg>
                     </reg>

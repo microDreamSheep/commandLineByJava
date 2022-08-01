@@ -4,7 +4,6 @@ import live.midreamsheep.command.data.variable.GlobalVariable;
 import live.midreamsheep.command.group.Controller;
 
 import java.io.File;
-import java.nio.file.Path;
 import java.util.Objects;
 
 public class LS implements Controller {

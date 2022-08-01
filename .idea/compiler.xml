@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="downloadExeTool" />
+        <module name="Controller" />
+        <module name="submoduleCommonResources" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

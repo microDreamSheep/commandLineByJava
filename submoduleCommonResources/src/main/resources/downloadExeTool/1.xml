@@ -6,17 +6,17 @@
             <name><methodName/></name>
             <type>GET</type>
             <inPutName>key</inPutName>
-            <path>https://bapi.safe.360.cn/soft/search?keyword=#{key}&amp;page=1&amp;channel=&amp;callback=jQuery112402610821174209397_1658123062044&amp;_=1658123062045</path>
+            <path>https://s.pcmgr.qq.com/tapi/web/searchcgi.php?type=search&amp;callback=searchCallback&amp;keyword=#{key}&amp;page=1&amp;pernum=30&amp;more=0</path>
             <parseProgram>
                 <isHtml>false</isHtml>
                 <type>reg</type>
                 <xml>
                     <reg>
-                        <reg name="name">
-                            "softname":".+?"
+                        <reg name="name" del="'&quot;SoftName&quot;:&quot;';'&quot;';">
+                            "SoftName":".+?"
                         </reg>
-                        <reg name="url">
-                            "soft_download":"(.)+?"
+                        <reg name="url" del="'&lt;url>\n        &lt;![CDATA[';']]>\n    &lt;\/url>';">
+                            &lt;url&gt;\n(.)+?&lt;\/url&gt;
                         </reg>
                     </reg>
                 </xml>

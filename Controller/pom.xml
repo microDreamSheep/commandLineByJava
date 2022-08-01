@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>downloadExeTool</artifactId>
+    <artifactId>Controller</artifactId>
     <dependencies>
         <dependency>
             <groupId>live.midreamsheep.command</groupId>
-            <artifactId>submoduleCommonResources</artifactId>
+            <artifactId>downloadExeTool</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

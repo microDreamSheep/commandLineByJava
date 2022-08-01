@@ -3,9 +3,7 @@ package live.midreamsheep.tools.download;
 import com.midream.sheep.swcj.Exception.ConfigException;
 import com.midream.sheep.swcj.Exception.EmptyMatchMethodException;
 import com.midream.sheep.swcj.Exception.InterfaceIllegal;
-import com.midream.sheep.swcj.core.build.builds.effecient.EffecientBuilder;
-import com.midream.sheep.swcj.core.factory.SWCJXmlFactory;
-import com.midream.sheep.swcj.core.factory.xmlfactory.CoreXmlFactory;
+import live.midreamsheep.command.publicresource.swcj.StaticXmlFactory;
 import live.midreamsheep.tools.download.data.Constant;
 import live.midreamsheep.tools.download.downloaders.DownloadParseInter;
 import live.midreamsheep.tools.download.downloaders.Downloader;
@@ -16,17 +14,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class DownloaderStarter {
-    private static final SWCJXmlFactory swcjXmlFactory = new CoreXmlFactory();
     private static final Scanner s = new Scanner(System.in);
     public void run(String name,String resource,String nowFilePath) {
         //解析配置文件
-        parseXmlConfig();
         try {
-            swcjXmlFactory.parse(inputString(Objects.requireNonNull(DownloaderStarter.class.getClassLoader().getResourceAsStream(resource+".xml"))));
+            StaticXmlFactory.loadXml("downloadExeTool/"+resource+".xml");
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
@@ -34,7 +29,7 @@ public class DownloaderStarter {
         //选择下载源
         try {
             //执行下载
-            downloadByApp(getCheckoutApp(parseJson((Downloader) swcjXmlFactory.getWebSpiderById("downloader"), Constant.parse[Integer.parseInt(resource) - 1], name)),nowFilePath);
+            downloadByApp(getCheckoutApp(parseJson((Downloader) StaticXmlFactory.xmlFactory.getWebSpiderById("downloader"), Constant.parse[Integer.parseInt(resource) - 1], name)),nowFilePath);
         } catch (EmptyMatchMethodException | ConfigException | InterfaceIllegal e) {
             throw new RuntimeException(e);
         }
@@ -88,16 +83,6 @@ public class DownloaderStarter {
         return parse.parseJson(downloader.getDownloadJson(key));
     }
 
-
-    @SuppressWarnings("all")
-    private void parseXmlConfig(){
-        swcjXmlFactory.setBuilder(new EffecientBuilder());
-        try {
-            swcjXmlFactory.parse(inputString(DownloaderStarter.class.getClassLoader().getResourceAsStream("config.xml")));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     private String inputString(InputStream stream){
         StringBuilder stringBuilder = new StringBuilder();

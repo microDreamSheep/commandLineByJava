@@ -10,10 +10,7 @@ public class TencentParse implements DownloadParseInter {
     @Override
     public APP[] parseJson(APP[] apps) {
         for (APP app : apps) {
-            app.setName(unicodeToCN(app.getName().substring(
-                    app.getName().indexOf("\"SoftName\":\"")+"\"SoftName\":\"".length(),
-                    app.getName().lastIndexOf("\"")
-            )));
+            app.setName(unicodeToCN(app.getName()));
             app.setUrl(app.getUrl().substring(
                     app.getUrl().indexOf("<url>\\n                <![CDATA[")+"<url>\\n                <![CDATA[".length(),
                     app.getUrl().lastIndexOf("]]>\\n")

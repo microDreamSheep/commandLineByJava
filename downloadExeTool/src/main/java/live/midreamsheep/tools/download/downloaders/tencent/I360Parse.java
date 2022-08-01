@@ -9,16 +9,7 @@ public class I360Parse implements DownloadParseInter {
     @Override
     public APP[] parseJson(APP[] apps) {
         for (APP app : apps) {
-            app.setName(unicodeToCN(app.getName().substring(
-                    app.getName().indexOf("\"softname\":\"")+"\"softname\":\"".length(),
-                    app.getName().lastIndexOf("\"")
-            )));
-            app.setUrl(unicodeToCN(
-                    app.getUrl().substring(
-                            app.getUrl().indexOf("\"soft_download\":\"")+"\"soft_download\":\"".length(),
-                            app.getUrl().lastIndexOf("\"")
-                    )
-            ));
+            app.setName(unicodeToCN(app.getName()));
         }
         return apps;
     }
