@@ -11,11 +11,9 @@ public class Commmand implements Controller {
         new Thread(()-> {
             try {
                 StringBuilder sb = new StringBuilder();
-                sb.append("\"");
                 for (String s : args) {
                     sb.append(s).append(" ");
                 }
-                sb.append("\"");
                 byte[] buffer = new byte[1024];
                 int len;
                 Runtime runtime = Runtime.getRuntime();

@@ -9,12 +9,16 @@ public class CoreController {
     public void Start(){
         while (!GlobalVariable.IS_EXIT){
             System.out.print(GlobalVariable.prefix+GlobalVariable.SEPARATE);
-            String input = s.nextLine();
-            if (input.equals("exit")){
-                GlobalVariable.IS_EXIT = true;
-            }else{
-                String[] args = input.split(" ");
-                CommandManager.getController(args[0]).control(args);
+            String in = s.nextLine();
+            switch (in.trim()){
+                case "exit":
+                    GlobalVariable.IS_EXIT = true;
+                    break;
+                case "":
+                    break;
+                default:
+                    String[] args = in.trim().split(" ");
+                    CommandManager.getController(args[0]).control(args);
             }
         }
     }
