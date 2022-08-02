@@ -11,20 +11,24 @@ public class Commmand implements Controller {
         new Thread(()-> {
             try {
                 StringBuilder sb = new StringBuilder();
+                sb.append("\"");
                 for (String s : args) {
                     sb.append(s).append(" ");
                 }
+                sb.append("\"");
                 byte[] buffer = new byte[1024];
                 int len;
                 Runtime runtime = Runtime.getRuntime();
                 Process process = runtime.exec("cmd /c " + GlobalVariable.currentFile.toPath().normalize() + "//" + sb);
                 try (InputStream results = process.getInputStream(); InputStream error = process.getErrorStream()) {
+                    System.out.println("\t");
                     while ((len = results.read(buffer)) != -1) {
                         System.out.println(new String(buffer, 0, len, "GBK"));
                     }
                     while ((len = error.read(buffer)) != -1) {
                         System.out.println(new String(buffer, 0, len, "GBK"));
                     }
+                    System.out.print(GlobalVariable.prefix+GlobalVariable.SEPARATE);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
