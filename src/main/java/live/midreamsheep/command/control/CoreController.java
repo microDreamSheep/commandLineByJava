@@ -50,6 +50,11 @@ public class CoreController {
                 continue;
             }
             if(chars[i] == ' '){
+                if(start==end||in.substring(start,end).trim().equals("")){
+                    start = i+1;
+                    end = i+1;
+                    continue;
+                }
                 list.add(in.substring(start,end));
                 start = i+1;
                 end = i+1;
@@ -59,7 +64,6 @@ public class CoreController {
         if(start != end){
             list.add(in.substring(start,end));
         }
-        System.out.println(list);
         return list.toArray(new String[0]);
     }
 }
