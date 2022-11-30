@@ -11,5 +11,5 @@ public class GlobalVariable {
     public static boolean IS_EXIT = false;
 
     //当前文件
-    public static File currentFile = new File("/");
+    public static File currentFile = new File(System.getProperty("user.dir"));
 }

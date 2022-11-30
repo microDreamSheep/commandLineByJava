@@ -1,10 +1,7 @@
 package live.midreamsheep.command.control;
 
 import live.midreamsheep.command.group.Controller;
-import live.midreamsheep.command.group.normal.file.CD;
-import live.midreamsheep.command.group.normal.file.DEL;
-import live.midreamsheep.command.group.normal.file.LS;
-import live.midreamsheep.command.group.normal.file.PWD;
+import live.midreamsheep.command.group.normal.file.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +20,10 @@ public class CommandManager {
             controllerMap.put("ls", new LS());
             //del命令
             controllerMap.put("del",new DEL());
+            //mkdir命令
+            controllerMap.put("mkdir",new MKDIR());
+            //mk命令
+            controllerMap.put("mk",new MK());
         }
     }
     public static Controller getController(String name){
